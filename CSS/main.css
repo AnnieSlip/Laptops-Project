@@ -1,0 +1,47 @@
+:root {
+  --blue: #62a1eb;
+  --white: #ffffff;
+  --gray: #ebebeb;
+  --light-blue: #e7f0f8;
+  --red: #e52f2f;
+  --light-red: #fff1f1;
+  --dark-blue: #1a5dab;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+button {
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 10px 0;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--dark-blue);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.container-box {
+  margin: 20px 0px;
+}
+
+/* FIRST PAGE CSS */
+.first-page-btn {
+  width: 400px;
+}
