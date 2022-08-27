@@ -2,24 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Redberry Bootcamp Project</title>
     <link rel="stylesheet" href="/CSS/main.css" />
     <link rel="stylesheet" href="/CSS/tanamshromeli.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
     <div class="container">
       <header>
-        <p>თანამშრომლის ინფო</p>
+        <div>
+          <p>თანამშრომლის ინფო</p>
+          <hr />
+        </div>
         <p>ლეპტოპის მახასიათებლები</p>
       </header>
 
-      <form class="form-container">
-        <div>
-          <input type="text" name="firstname" id="firstname" />
-          <input type="text" name="lastname" id="lastname" />
+      <form class="form-container" id="tanamshromeli-form">
+        <!--FIRSTNAME-->
+        <div class="form-content">
+          <div class="first-input-group">
+            <div form-elem>
+              <label for="firstname">სახელი</label>
+              <input type="text" name="firstname" id="firstname" />
+              <i id="first-i" class="fa-solid fa-circle-check"></i>
+              <p>მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
+            </div>
+            <!--LASTNAME-->
+            <div form-elem>
+              <label for="lastname">გვარი</label>
+              <input type="text" name="lastname" id="lastname" />
+              <i class="fa-solid fa-circle-check"></i>
+              <p>მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
+            </div>
+          </div>
+
+          <!--TEAM-->
+
+          <div class="dropdown form-elem">
+            <select name="team" id="team">
+              <option value="">თიმი</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
+
+          <!--POSITION-->
+          <div class="dropdown form-elem">
+            <select name="position" id="position">
+              <option value="">პოზიცია</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
+
+          <!--MAIL-->
+          <div class="form-elem">
+            <label for="email">მეილი</label>
+            <input type="email" name="email" id="email" />
+            <i class="fa-solid fa-circle-check"></i>
+            <p>უნდა მთავრდებოდეს @redberry.ge</p>
+          </div>
+
+          <!--PHONE-->
+          <div class="form-elem">
+            <label for="phone">ტელეფონის ნომერი</label>
+            <input type="tel" name="lastname" id="phone" />
+            <i class="fa-solid fa-circle-check"></i>
+            <p>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</p>
+          </div>
         </div>
+
+        <!--BUTTON-->
+        <button class="next-btn" type="submit" class="button">შემდეგი</button>
       </form>
 
       <div>
@@ -28,3 +93,8 @@
     </div>
   </body>
 </html>
+
+<!--
+
+  <i class="fa-solid fa-circle-check"></i>
+-->
