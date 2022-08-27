@@ -24,7 +24,7 @@ header hr {
   padding: 30px;
   background-color: var(--white);
   width: 75%;
-  height: 65vh;
+  height: 70vh;
   margin: 15px 0px;
   border-radius: 10px;
 }
@@ -47,7 +47,7 @@ header hr {
 }
 
 .first-input-group input {
-  width: 310px;
+  width: 300px;
 }
 
 .form-container label {
@@ -103,5 +103,59 @@ i {
 
 .next-btn {
   width: 140px;
-  margin-left: 500px;
+  margin-left: 455px;
+}
+
+a {
+  position: absolute;
+  left: -180px;
+  top: -20px;
+}
+
+header {
+  position: relative;
+}
+
+.select:hover:after {
+  background: var(--green);
+}
+
+/*MOBILE VERSION*/
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding: 0;
+  }
+
+  .form-container,
+  .form-content {
+    width: 100%;
+  }
+
+  .first-input-group {
+    flex-direction: column;
+  }
+
+  #logo {
+    display: none;
+  }
+  .laptop {
+    display: none;
+  }
+  header {
+    display: block;
+  }
+
+  .next-btn {
+    margin-bottom: 10px;
+    margin-left: 180px;
+  }
+
+  .first-input-group input {
+    margin: 10px 0px;
+    width: 100%;
+  }
 }

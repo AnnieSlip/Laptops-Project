@@ -18,6 +18,12 @@ body {
   height: 100vh;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 button {
   background-color: var(--blue);
   color: var(--white);
@@ -27,6 +33,7 @@ button {
   font-weight: 600;
   margin: 10px 0;
   border: none;
+  cursor: pointer;
 }
 
 button:hover {
