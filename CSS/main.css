@@ -38,10 +38,16 @@ button:hover {
 }
 
 .container-box {
-  margin: 20px 0px;
+  margin: 30px 0px;
 }
 
 /* FIRST PAGE CSS */
 .first-page-btn {
-  width: 400px;
+  width: 450px;
+}
+
+@media (max-width: 500px) {
+  .first-page-btn {
+    width: 350px;
+  }
 }

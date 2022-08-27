@@ -14,16 +14,25 @@
       </div>
 
       <div class="container-box">
-        <img src="/Photos/First-page.png" alt="Man with computer" />
+        <picture>
+          <source
+            media="(max-width: 500px)"
+            srcset="/Photos/Computer.png"
+            alt="Computer"
+          />
+          <img src="/Photos/First-page.png" alt="Man with computer" />
+        </picture>
       </div>
       <div class="container-box">
         <div>
-          <button type="button" class="first-page-btn">
+          <button type="button" class="first-page-btn" id="damateba">
             ჩანაწერის დამატება
           </button>
         </div>
         <div>
-          <button type="button" class="first-page-btn">ჩანაწერების სია</button>
+          <button type="button" class="first-page-btn" id="sia">
+            ჩანაწერების სია
+          </button>
         </div>
       </div>
     </div>
