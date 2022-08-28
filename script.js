@@ -1,3 +1,4 @@
+//First Page link to tanamshromeli page
 const damateba = document.getElementById("damateba");
 const sia = document.getElementById("sia");
 

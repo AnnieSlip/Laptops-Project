@@ -117,7 +117,7 @@ header {
 }
 
 .select:hover:after {
-  background: var(--green);
+  background: var(--light-blue);
 }
 
 /*MOBILE VERSION*/
