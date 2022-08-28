@@ -95,10 +95,7 @@ i {
   position: absolute;
   top: 40px;
   right: 20px;
-}
-
-#first-i {
-  right: 345px;
+  visibility: hidden;
 }
 
 .next-btn {
@@ -118,6 +115,22 @@ header {
 
 .select:hover:after {
   background: var(--light-blue);
+}
+
+.success i {
+  visibility: visible;
+}
+
+.success input {
+  border: 3px solid var(--light-blue);
+}
+
+.error input,
+.error select {
+  border: 2px solid var(--red);
+}
+.error p {
+  color: var(--red);
 }
 
 /*MOBILE VERSION*/

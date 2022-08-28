@@ -31,16 +31,21 @@
         <!--FIRSTNAME-->
         <div class="form-content">
           <div class="first-input-group">
-            <div form-elem>
-              <label for="firstname">სახელი</label>
-              <input type="text" name="firstname" id="firstname" />
+            <div class="form-elem">
+              <label for="firstname" >სახელი</label>
+              <input type="text" name="firstname" 
+              placeholder="გრიშა" id="firstname" />
               <i id="first-i" class="fa-solid fa-circle-check"></i>
               <p>მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
+              
             </div>
+            
             <!--LASTNAME-->
-            <div form-elem>
+            <div class="form-elem">
               <label for="lastname">გვარი</label>
-              <input type="text" name="lastname" id="lastname" />
+              <input type="text" name="lastname" 
+              placeholder="ბაგრატიონი"
+              id="lastname" />
               <i class="fa-solid fa-circle-check"></i>
               <p>მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
             </div>
@@ -48,9 +53,9 @@
 
           <!--TEAM-->
 
-          <div class="dropdown form-elem">
+          <div class="dropdown form-elem" >
             
-            <select class="team" name="team" id="team">
+            <select class="team " name="team" id="team" onchange="getSelectValue();">
              
               <!--
               <option value="">თიმი</option>
@@ -58,20 +63,18 @@
               <option value=""></option>
               <option value=""></option>
               -->
-              <option value="" class="team-container">თიმი</option>
+              <option  value="team" class="team-container">თიმი</option>
             </select>
           
           </div>
 
           <!--POSITION-->
           <div class="dropdown form-elem">
-            <select name="position" id="position">
-              <option value="">პოზიცია</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
+            <select name="position"  id="position" disabled>
+              <option class="position-container" value="">პოზიცია</option>
             </select>
           </div>
+       
 
           <!--MAIL-->
           <div class="form-elem">

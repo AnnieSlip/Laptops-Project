@@ -51,6 +51,10 @@ button:hover {
   margin: 30px 0px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* FIRST PAGE CSS */
 .first-page-btn {
   width: 450px;
