@@ -27,14 +27,24 @@
       <form class="form-container">
 
          <div class="first-container">
-        <div>
-          <p>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
+            <!--ADD PHOTO-->
+
+        <div class="image-box">
+            <div class="image_container">
+                <div class="img-box">
+                <label id="photo-description" for="file">ჩააგდე ან ატვირთე<br> ლეპტოპის ფოტო</label>
+            <input type="file" id="image_input" accept="image/png, image/jpg">
+            <button type="button" id="custom-button">ატვირთე</button>
+            <div id="display_image"></div>
+          
+                </div>
+            </div>
         </div>
 
         <div class="form-box">
             <div class="elem">
             <label for="laptopname" >ლეპტოპის სახელი</label>
-            <input type="text" name="laptopname" 
+            <input  type="text" name="laptopname" 
             placeholder="HP" id="laptopname" />
             <br>
             <i id="first-i" class="fa-solid fa-circle-check"></i>
@@ -69,7 +79,7 @@
         
             <div class="elem">
                 <label for="nakadi" >CPU-ს ნაკადი</label>
-                <input type="text" name="nakadi" 
+                <input class="input" type="text" name="nakadi" 
                 placeholder="14" id="nakadi" />
                 <br>
                 <i id="first-i" class="fa-solid fa-circle-check"></i>
@@ -80,7 +90,7 @@
     <div class="form-box">
         <div class="elem">
             <label for="ram" >ლეპტოპის RAM(GB)</label>
-            <input type="text" name="ram" 
+            <input class="input" type="text" name="ram" 
             placeholder="16" id="ram" />
             <br>
             <i id="first-i" class="fa-solid fa-circle-check"></i>
@@ -91,12 +101,12 @@
             <p class="radio-description">მეხსიერების ტიპი</p>
    
             <label for="ssd" class="radio">
-            <input type="radio" name="ssd" class="radio-input" id="ssd">
+            <input type="radio" name="mexsiereba" value="SSD" class="radio-input" id="ssd">
             <div class="radio__radio"></div>SSD</label>
         
             
             <label for="hdd" class="radio">
-                <input type="radio" name="hdd" class="radio-input" id="hdd">
+                <input type="radio" name="mexsiereba" value="HDD" class="radio-input" id="hdd">
                 <div class="radio__radio"></div>HDD</label>
             
         </div>
@@ -107,7 +117,7 @@
 <div class="form-box">
     <div class="elem">
         <label for="date" >შეძენის რიცხვი(არჩევითი)</label>
-        <input type="text" name="date" 
+        <input class="input" type="text" name="date" 
         placeholder="დდ/თთ/წწწწ" id="date" />
         <br>
         <i id="first-i" class="fa-solid fa-circle-check"></i>
@@ -115,7 +125,7 @@
     
         <div class="elem">
             <label for="price" >ლეპტოპის ფასი</label>
-            <input type="text" name="price" 
+            <input class="input" type="text" name="price" 
             placeholder="0000" id="price" />
             <br>
             <i id="first-i" class="fa-solid fa-circle-check"></i>
@@ -130,12 +140,12 @@
     <p class="radio-description">ლეპტოპის მდგომარეობა</p>
    
     <label for="axali" class="radio">
-    <input type="radio" name="axali" class="radio-input" id="axali">
+    <input  type="radio" name="mdgomareoba" value="ახალი" class="radio-input" id="axali">
     <div class="radio__radio"></div>ახალი</label>
 
     
     <label for="meoradi" class="radio">
-        <input type="radio" name="meoradi" class="radio-input" id="meoradi">
+        <input type="radio" name="mdgomareoba" value="მეორადი" class="radio-input" id="meoradi">
         <div class="radio__radio"></div>მეორადი</label>
     
 
