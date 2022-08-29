@@ -10,6 +10,149 @@
   </head>
 
   <body>
+    <div class="container">
+      <header>
+        <a href="/pages/tanamshromlis-info.html"
+          ><img src="/Photos/back-btn.png"
+        /></a>
+        <div>
+          <p>თანამშრომლის ინფო</p>
+        </div>
+        <div>
+          <p class="laptop">ლეპტოპის მახასიათებლები</p>
+          <hr />
+        </div>
+      </header>
+
+      <form class="form-container">
+
+         <div class="first-container">
+        <div>
+          <p>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</p>
+        </div>
+
+        <div class="form-box">
+            <div class="elem">
+            <label for="laptopname" >ლეპტოპის სახელი</label>
+            <input type="text" name="laptopname" 
+            placeholder="HP" id="laptopname" />
+            <br>
+            <i id="first-i" class="fa-solid fa-circle-check"></i>
+            <small>ლათინური ასოები, ციფრები, !@#$^&(_+=</small>
+            </div>
+
+            
+                <div class="elem">
+                    <select name="brand"  id="brand">
+                      <option value="">ლეპტოპის ბრენდი</option>
+                    </select>
+                  </div> 
+            
+        </div>
+    </hr class="devider">
+
+    <div class="form-box">
+        <div class="elem">
+            <select name="cpu"  id="cpu">
+              <option value="">CPU</option>
+            </select>
+          </div> 
+
+          <div class="elem">
+            <label for="birtvi" >CPU-ს ბირთვი</label>
+            <input type="text" name="birtvi" 
+            placeholder="14" id="birtvi" />
+            <br>
+            <i id="first-i" class="fa-solid fa-circle-check"></i>
+            <small>მხოლოდ ციფრები</small>
+            </div>
+        
+            <div class="elem">
+                <label for="nakadi" >CPU-ს ნაკადი</label>
+                <input type="text" name="nakadi" 
+                placeholder="14" id="nakadi" />
+                <br>
+                <i id="first-i" class="fa-solid fa-circle-check"></i>
+                <small>მხოლოდ ციფრები</small>
+                </div>
+    </div>
+
+    <div class="form-box">
+        <div class="elem">
+            <label for="ram" >ლეპტოპის RAM(GB)</label>
+            <input type="text" name="ram" 
+            placeholder="16" id="ram" />
+            <br>
+            <i id="first-i" class="fa-solid fa-circle-check"></i>
+            <small>მხოლოდ ციფრები</small>
+            </div>
+
+         <div>
+            <p class="radio-description">მეხსიერების ტიპი</p>
+   
+            <label for="ssd" class="radio">
+            <input type="radio" name="ssd" class="radio-input" id="ssd">
+            <div class="radio__radio"></div>SSD</label>
+        
+            
+            <label for="hdd" class="radio">
+                <input type="radio" name="hdd" class="radio-input" id="hdd">
+                <div class="radio__radio"></div>HDD</label>
+            
+        </div>
+
+    </div>
+</hr>
+
+<div class="form-box">
+    <div class="elem">
+        <label for="date" >შეძენის რიცხვი(არჩევითი)</label>
+        <input type="text" name="date" 
+        placeholder="დდ/თთ/წწწწ" id="date" />
+        <br>
+        <i id="first-i" class="fa-solid fa-circle-check"></i>
+        </div>
+    
+        <div class="elem">
+            <label for="price" >ლეპტოპის ფასი</label>
+            <input type="text" name="price" 
+            placeholder="0000" id="price" />
+            <br>
+            <i id="first-i" class="fa-solid fa-circle-check"></i>
+            <small>მხოლოდ ციფრები</small>
+            </div>
+</div>
+
+
+<div class="form-box">
+   <div class="elem">
+
+    <p class="radio-description">ლეპტოპის მდგომარეობა</p>
+   
+    <label for="axali" class="radio">
+    <input type="radio" name="axali" class="radio-input" id="axali">
+    <div class="radio__radio"></div>ახალი</label>
+
+    
+    <label for="meoradi" class="radio">
+        <input type="radio" name="meoradi" class="radio-input" id="meoradi">
+        <div class="radio__radio"></div>მეორადი</label>
+    
+
+    
+</div>
+   
+    
+    </div>
+
+
+
+<a href="/pages/tanamshromlis-info.html">უკან</a>
+</div>
+       
+      </form>
+    </div>
+
     <script src="/javascript/maxasiatebeli.js"></script>
   </body>
 </html>
