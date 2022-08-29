@@ -66,9 +66,24 @@ function getSelectValue() {
 }
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
   validateForm();
+  if (isFormValid() == true) {
+    form.submit();
+  } else {
+    e.preventDefault();
+  }
 });
+
+function isFormValid() {
+  const inputContainers = form.querySelectorAll(".form-elem");
+  let result = true;
+  inputContainers.forEach((container) => {
+    if (container.classList.contains("error")) {
+      result = false;
+    }
+  });
+  return result;
+}
 
 const validateForm = function () {
   const team = document.getElementById("team");
@@ -100,10 +115,11 @@ const validateForm = function () {
   } else {
     setError(email, "უნდა მთავრდებოდეს @redberry.ge");
   }
+
   //Phone
   if ((phone.value = "")) {
     setError(phone, "ველი არ უნდა იყოს ცარიელი");
-  } else if ((phone.value = "+995")) {
+  } else if (isPhoneValid(phone.value)) {
     setSucces(phone, "უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს");
   } else {
     setError(phone, "უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს");
@@ -153,3 +169,7 @@ const isEmailValid = function (email) {
   const reg = /^([a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+)@redberry.ge$/;
   return reg.test(email);
 };
+
+function isPhoneValid(phone) {
+  return true;
+}
