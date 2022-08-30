@@ -8,6 +8,8 @@ const nakadi = document.querySelector("#nakadi");
 const laptopRAM = document.querySelector("#ram");
 const date = document.querySelector("#date");
 const price = document.querySelector("#price");
+const radio = document.querySelector(".radio");
+const imageContainer = document.querySelector(".image_container");
 //const mdgomareoba = document.querySelector("");
 //const mexsierebisTipi = document.querySelector("");
 ////////////////////////////////////////////////////
@@ -73,8 +75,12 @@ const renderData = function (place, id, value) {
 };
 //FORM SUBMIT AND VALIDATION
 secondForm.addEventListener("submit", (e) => {
-  e.preventDefault();
   formValidation();
+  if (checkIsFormValid() == true) {
+    form.submit();
+  } else {
+    e.preventDefault();
+  }
 });
 
 const formValidation = function () {
@@ -98,28 +104,89 @@ const formValidation = function () {
   if (laptopName.value == "") {
     addError(laptopName);
   } else if (isLaptopNameValid()) {
+    removeError(laptopName);
   }
   //LaptopBrand
+  if (laptopBrand.value == "") {
+    addError(laptopBrand);
+  } else {
+    removeError(laptopBrand);
+  }
   //CPU
+  if (laptopCPU.value == "") {
+    addError(laptopCPU);
+  } else {
+    removeError(laptopCPU);
+  }
   //CPU BIRTVI
+  onlyNumbers(cpuBirtvi.value) ? removeError(cpuBirtvi) : addError(cpuBirtvi);
   //CPU NAKADI
+  onlyNumbers(nakadi.value) ? removeError(nakadi) : addError(nakadi);
   //RAM
-  //MEXSIEREBIS TIPI
-  //DATE
+  onlyNumbers(laptopRAM.value) ? removeError(laptopRAM) : addError(laptopRAM);
   //PRICE
+  onlyNumbers(price.value) ? removeError(price) : addError(price);
   //MDGOMAREOBA
+  if (mdgomareobaValidate() == false) {
+    document.querySelector(".second").style.color = "red";
+    addError(imageContainer);
+  } else {
+    removeError(imageContainer);
+    document.querySelector(".second").style.color = "var(--black)";
+  }
+  //Mexsierebis tipi
+  if (mexsierebaValidate() == false) {
+    document.querySelector(".first").style.color = "red";
+    addError(imageContainer);
+  } else {
+    removeError(imageContainer);
+    document.querySelector(".first").style.color = "var(--black)";
+  }
 };
 
+const checkIsFormValid = function () {
+  const inputContainers = secondForm.querySelectorAll(".elem");
+  let result = true;
+  inputContainers.forEach((container) => {
+    if (container.classList.contains("error")) {
+      result = false;
+    }
+  });
+  return result;
+};
+
+const mexsierebaValidate = function () {
+  let x = document.myform.mexsiereba;
+  for (let i = 0; i < x.length; i++) {
+    if (x[i].checked) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+const mdgomareobaValidate = function () {
+  let x = document.myform.mdgomareoba;
+  for (let i = 0; i < x.length; i++) {
+    if (x[i].checked) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
 const isLaptopNameValid = function (laptopName) {
   const reg = /^[a-z][a-z0-9]*$/i;
   return reg.test(laptopName);
 };
-
+const onlyNumbers = function (value) {
+  const reg = /^\d+$/;
+  return reg.test(value);
+};
 function addError(element) {
   const parent = element.parentElement;
   parent.classList.add("error");
 }
-
 function removeError(element) {
   const parent = element.parentElement;
   parent.classList.remove("error");
