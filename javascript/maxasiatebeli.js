@@ -1,5 +1,16 @@
 "use strict";
+const secondForm = document.getElementById("second-container");
+//INPUTS
 const image_input = document.querySelector("#image_input");
+const laptopName = document.querySelector("#laptopname");
+const cpuBirtvi = document.querySelector("#birtvi");
+const nakadi = document.querySelector("#nakadi");
+const laptopRAM = document.querySelector("#ram");
+const date = document.querySelector("#date");
+const price = document.querySelector("#price");
+//const mdgomareoba = document.querySelector("");
+//const mexsierebisTipi = document.querySelector("");
+////////////////////////////////////////////////////
 let uploaded_image = "";
 const realFileBtn = document.getElementById("image_input");
 const custumBtn = document.getElementById("custom-button");
@@ -60,3 +71,56 @@ const renderData = function (place, id, value) {
     `;
   place.insertAdjacentHTML("afterend", data);
 };
+//FORM SUBMIT AND VALIDATION
+secondForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formValidation();
+});
+
+const formValidation = function () {
+  const laptopCPU = document.querySelector("#cpu");
+  const laptopBrand = document.querySelector("#brand");
+  const imageContainer = document.querySelector(".image_container");
+
+  //PHOTO
+  if (image_input.value.trim() == "") {
+    addError(image_input);
+    imageContainer.style.border = "dashed 2px var(--red)";
+    imageContainer.style.backgroundColor = "#FFF1F1";
+    document.querySelector("#photo-description").style.color = "var(--red)";
+  } else {
+    removeError(image_input);
+    imageContainer.style.border = "dashed 2px var(--blue)";
+    imageContainer.style.backgroundColor = "var(--gray)";
+    document.querySelector("#photo-description").style.color = "var(--blue)";
+  }
+  //LaptopName
+  if (laptopName.value == "") {
+    addError(laptopName);
+  } else if (isLaptopNameValid()) {
+  }
+  //LaptopBrand
+  //CPU
+  //CPU BIRTVI
+  //CPU NAKADI
+  //RAM
+  //MEXSIEREBIS TIPI
+  //DATE
+  //PRICE
+  //MDGOMAREOBA
+};
+
+const isLaptopNameValid = function (laptopName) {
+  const reg = /^[a-z][a-z0-9]*$/i;
+  return reg.test(laptopName);
+};
+
+function addError(element) {
+  const parent = element.parentElement;
+  parent.classList.add("error");
+}
+
+function removeError(element) {
+  const parent = element.parentElement;
+  parent.classList.remove("error");
+}

@@ -25,153 +25,193 @@
       </header>
 
       <form class="form-container" id="second-container">
-
-         <div class="first-container">
-            <!--ADD PHOTO-->
-
-        <div class="image-box">
+        <div class="first-container">
+          <!--ADD PHOTO-->
+          <div class="image-box error">
             <div class="image_container">
-                <div class="img-box">
-                <label id="photo-description" for="file">ჩააგდე ან ატვირთე<br> ლეპტოპის ფოტო</label>
-            <input type="file" id="image_input" accept="image/png, image/jpg">
-            <button type="button" id="custom-button">ატვირთე</button>
-            <div id="display_image"></div>
-          
-                </div>
+              <div class="img-box">
+                <label id="photo-description" for="file"
+                  >ჩააგდე ან ატვირთე<br />
+                  ლეპტოპის ფოტო</label
+                >
+                <input
+                  type="file"
+                  id="image_input"
+                  accept="image/png, image/jpg"
+                />
+                <button type="button" id="custom-button">ატვირთე</button>
+                <div id="display_image"></div>
+              </div>
             </div>
-        </div>
-
-        <div class="form-box">
+          </div>
+          <!-------------LAPTOP NAME---------------------------->
+          <div class="form-box">
             <div class="elem">
-            <label for="laptopname" >ლეპტოპის სახელი</label>
-            <input  type="text" name="laptopname" 
-            placeholder="HP" id="laptopname" />
-            <br>
-            <i id="first-i" class="fa-solid fa-circle-check"></i>
-            <small>ლათინური ასოები, ციფრები, !@#$^&(_+=</small>
+              <label for="laptopname">ლეპტოპის სახელი</label>
+              <input
+                type="text"
+                name="laptopname"
+                placeholder="HP"
+                id="laptopname"
+              />
+              <br />
+              <i id="first-i" class="fa-solid fa-circle-check"></i>
+              <small>ლათინური ასოები, ციფრები, !@#$^&(_+=</small>
             </div>
-
-            
-                <div class="elem">
-                    <select name="brand"  id="brand">
-                      <option value="" class="brand-container">ლეპტოპის ბრენდი</option>
-                    </select>
-                  </div> 
-            
-        </div>
-    </hr class="devider">
-
-    <div class="form-box">
-        <div class="elem">
-            <select name="cpu"  id="cpu">
-              <option class="cpu-container" value="">CPU</option>
-            </select>
-          </div> 
-
-          <div class="elem">
-            <label for="birtvi" >CPU-ს ბირთვი</label>
-            <input type="text" name="birtvi" 
-            placeholder="14" id="birtvi" />
-            <br>
-            <i id="first-i" class="fa-solid fa-circle-check"></i>
-            <small>მხოლოდ ციფრები</small>
-            </div>
-        
+            <!------------------Laptop Brand---------------------->
             <div class="elem">
-                <label for="nakadi" >CPU-ს ნაკადი</label>
-                <input class="input" type="text" name="nakadi" 
-                placeholder="14" id="nakadi" />
-                <br>
-                <i id="first-i" class="fa-solid fa-circle-check"></i>
-                <small>მხოლოდ ციფრები</small>
-                </div>
-    </div>
-
-    <div class="form-box">
-        <div class="elem">
-            <label for="ram" >ლეპტოპის RAM(GB)</label>
-            <input class="input" type="text" name="ram" 
-            placeholder="16" id="ram" />
-            <br>
-            <i id="first-i" class="fa-solid fa-circle-check"></i>
-            <small>მხოლოდ ციფრები</small>
+              <select name="brand" id="brand">
+                <option value="" class="brand-container">
+                  ლეპტოპის ბრენდი
+                </option>
+              </select>
             </div>
-
-         <div>
-            <p class="radio-description">მეხსიერების ტიპი</p>
-   
-            <label for="ssd" class="radio">
-            <input type="radio" name="mexsiereba" value="SSD" class="radio-input" id="ssd">
-            <div class="radio__radio"></div>SSD</label>
-        
-            
-            <label for="hdd" class="radio">
-                <input type="radio" name="mexsiereba" value="HDD" class="radio-input" id="hdd">
-                <div class="radio__radio"></div>HDD</label>
-            
-        </div>
-
-    </div>
-</hr>
-
-<div class="form-box">
-    <div class="elem">
-        <label for="date" >შეძენის რიცხვი(არჩევითი)</label>
-        <input class="input" type="text" name="date" 
-        placeholder="დდ/თთ/წწწწ" id="date" />
-        <br>
-        <i id="first-i" class="fa-solid fa-circle-check"></i>
-        </div>
-    
-        <div class="elem">
-            <label for="price" >ლეპტოპის ფასი</label>
-            <input class="input" type="text" name="price" 
-            placeholder="0000" id="price" />
-            <br>
-            <i id="first-i" class="fa-solid fa-circle-check"></i>
-            <small>მხოლოდ ციფრები</small>
+          </div>
+          <hr class="devider" />
+          <div class="form-box">
+            <!--------------CPU------------------------------------->
+            <div class="elem">
+              <select name="cpu" id="cpu">
+                <option class="cpu-container" value="">CPU</option>
+              </select>
             </div>
-</div>
+            <!----------------CPU BIRTVI---------------------------->
+            <div class="elem">
+              <label for="birtvi">CPU-ს ბირთვი</label>
+              <input type="text" name="birtvi" placeholder="14" id="birtvi" />
+              <br />
+              <i id="first-i" class="fa-solid fa-circle-check"></i>
+              <small>მხოლოდ ციფრები</small>
+            </div>
+            <!-----------------CPU NAKADI----------------------------->
+            <div class="elem">
+              <label for="nakadi">CPU-ს ნაკადი</label>
+              <input
+                class="input"
+                type="text"
+                name="nakadi"
+                placeholder="14"
+                id="nakadi"
+              />
+              <br />
+              <i id="first-i" class="fa-solid fa-circle-check"></i>
+              <small>მხოლოდ ციფრები</small>
+            </div>
+          </div>
 
+          <div class="form-box">
+            <!-----------------------------LAPTOP RAM-------------------->
+            <div class="elem">
+              <label for="ram">ლეპტოპის RAM(GB)</label>
+              <input
+                class="input"
+                type="text"
+                name="ram"
+                placeholder="16"
+                id="ram"
+              />
+              <br />
+              <i id="first-i" class="fa-solid fa-circle-check"></i>
+              <small>მხოლოდ ციფრები</small>
+            </div>
+            <!----------------------------MEXSIEREBIS TIPI------------------>
+            <div>
+              <p class="radio-description">მეხსიერების ტიპი</p>
+              <label for="ssd" class="radio">
+                <input
+                  type="radio"
+                  name="mexsiereba"
+                  value="SSD"
+                  class="radio-input"
+                  id="ssd"
+                />
+                <div class="radio__radio"></div>
+                SSD</label
+              >
+              <label for="hdd" class="radio">
+                <input
+                  type="radio"
+                  name="mexsiereba"
+                  value="HDD"
+                  class="radio-input"
+                  id="hdd"
+                />
+                <div class="radio__radio"></div>
+                HDD</label
+              >
+            </div>
+          </div>
+          <hr class="devider" />
+          <!-----------------SHEZENIS RICXVI---------------->
+          <div class="form-box">
+            <div class="elem">
+              <label for="date">შეძენის რიცხვი(არჩევითი)</label>
+              <input
+                class="input"
+                type="text"
+                name="date"
+                placeholder="დდ/თთ/წწწწ"
+                id="date"
+              />
+              <br />
+              <i id="first-i" class="fa-solid fa-circle-check"></i>
+            </div>
+            <!------------PRICE---------------------------------->
+            <div class="elem">
+              <label for="price">ლეპტოპის ფასი</label>
+              <input
+                class="input"
+                type="text"
+                name="price"
+                placeholder="0000"
+                id="price"
+              />
+              <br />
+              <i id="first-i" class="fa-solid fa-circle-check"></i>
+              <small>მხოლოდ ციფრები</small>
+            </div>
+          </div>
+          <!----------------------MDGOMAREOBA------------------------>
+          <div class="form-box">
+            <div class="elem">
+              <p class="radio-description">ლეპტოპის მდგომარეობა</p>
+              <label for="axali" class="radio">
+                <input
+                  type="radio"
+                  name="mdgomareoba"
+                  value="ახალი"
+                  class="radio-input"
+                  id="axali"
+                />
+                <div class="radio__radio"></div>
+                ახალი</label
+              >
 
-<div class="form-box">
-   
-<div class="elem">
-    <p class="radio-description">ლეპტოპის მდგომარეობა</p>
-   
-    <label for="axali" class="radio">
-    <input  type="radio" name="mdgomareoba" value="ახალი" class="radio-input" id="axali">
-    <div class="radio__radio"></div>ახალი</label>
+              <label for="meoradi" class="radio">
+                <input
+                  type="radio"
+                  name="mdgomareoba"
+                  value="მეორადი"
+                  class="radio-input"
+                  id="meoradi"
+                />
+                <div class="radio__radio"></div>
+                მეორადი</label
+              >
+            </div>
+          </div>
 
-    
-    <label for="meoradi" class="radio">
-        <input type="radio" name="mdgomareoba" value="მეორადი" class="radio-input" id="meoradi">
-        <div class="radio__radio"></div>მეორადი</label>
-    
-
-    
-</div>
-   
-    
-    </div>
-
-
-<div class="form-box">
-<a href="/pages/tanamshromlis-info.html">უკან</a>
-    <button type="submit" class="damaxsovreba">დამახსოვრება</button>
-</div>
-
-</div>
+          <div class="form-box">
+            <a href="/pages/tanamshromlis-info.html">უკან</a>
+            <button type="submit" class="damaxsovreba">დამახსოვრება</button>
+          </div>
+        </div>
       </form>
 
       <div>
         <img id="logo" src="/Photos/Logo.png" alt="Redberry-logo" />
       </div>
-
     </div>
-    
-   
-
 
     <script src="/javascript/maxasiatebeli.js"></script>
   </body>

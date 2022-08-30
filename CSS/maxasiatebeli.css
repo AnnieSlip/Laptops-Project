@@ -11,7 +11,7 @@ body {
 }
 
 #second-container {
-  height: 900px;
+  height: 1000px;
 }
 
 .first-container {
@@ -30,6 +30,7 @@ select {
 .elem {
   width: 50%;
 }
+
 /*radio elements*/
 .radio {
   display: inline-flex;
@@ -97,4 +98,22 @@ select {
 }
 #custom-button {
   width: 50%;
+}
+
+.devider {
+  width: 100%;
+  border: 1px solid var(--gray);
+  color: var(--gray);
+  background-color: var(--gray);
+}
+
+.error input,
+.error select {
+  border: 2px solid var(--red);
+}
+
+.error small,
+.error label,
+.error {
+  color: var(--red);
 }

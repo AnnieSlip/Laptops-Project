@@ -87,7 +87,6 @@ function isFormValid() {
 
 const validateForm = function () {
   const team = document.getElementById("team");
-
   const position = document.getElementById("position");
 
   //Firstname
