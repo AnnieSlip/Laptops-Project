@@ -24,7 +24,7 @@
         </div>
       </header>
 
-      <form class="form-container">
+      <form class="form-container" id="second-container">
 
          <div class="first-container">
             <!--ADD PHOTO-->
@@ -54,7 +54,7 @@
             
                 <div class="elem">
                     <select name="brand"  id="brand">
-                      <option value="">ლეპტოპის ბრენდი</option>
+                      <option value="" class="brand-container">ლეპტოპის ბრენდი</option>
                     </select>
                   </div> 
             
@@ -64,7 +64,7 @@
     <div class="form-box">
         <div class="elem">
             <select name="cpu"  id="cpu">
-              <option value="">CPU</option>
+              <option class="cpu-container" value="">CPU</option>
             </select>
           </div> 
 
@@ -135,8 +135,8 @@
 
 
 <div class="form-box">
-   <div class="elem">
-
+   
+<div class="elem">
     <p class="radio-description">ლეპტოპის მდგომარეობა</p>
    
     <label for="axali" class="radio">
@@ -156,12 +156,22 @@
     </div>
 
 
-
+<div class="form-box">
 <a href="/pages/tanamshromlis-info.html">უკან</a>
+    <button type="submit" class="damaxsovreba">დამახსოვრება</button>
 </div>
-       
+
+</div>
       </form>
+
+      <div>
+        <img id="logo" src="/Photos/Logo.png" alt="Redberry-logo" />
+      </div>
+
     </div>
+    
+   
+
 
     <script src="/javascript/maxasiatebeli.js"></script>
   </body>

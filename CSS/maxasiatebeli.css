@@ -1,19 +1,26 @@
 body {
   background-color: #f5f5f5;
 }
+
 .form-box {
   display: flex;
-  border: 1px solid black;
   justify-content: space-between;
   align-items: center;
-  margin: 15px 0;
+  gap: 1rem;
+  margin-top: 2%;
 }
+
+#second-container {
+  height: 900px;
+}
+
 .first-container {
   width: 65%;
 }
 .form-container {
   height: 800px;
 }
+
 .form-container input {
   width: 80%;
 }

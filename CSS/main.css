@@ -45,7 +45,6 @@ header hr {
   flex-direction: column;
   padding: 30px;
   background-color: var(--white);
-  height: 70vh;
   width: 75%;
   margin: 15px 0px;
   border-radius: 10px;
