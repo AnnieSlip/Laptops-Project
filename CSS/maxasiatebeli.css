@@ -117,3 +117,10 @@ select {
 .error {
   color: var(--red);
 }
+
+.success-container {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  margin-left: 400px;
+}

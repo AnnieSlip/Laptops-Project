@@ -18,6 +18,7 @@ const realFileBtn = document.getElementById("image_input");
 const custumBtn = document.getElementById("custom-button");
 const laptopBrandContainer = document.querySelector(".brand-container");
 const laptopCpuContainer = document.querySelector(".cpu-container");
+let x = false;
 //Recieve data from previous page
 const params = new URLSearchParams(window.location.search);
 params.forEach((value, key) => {
@@ -76,6 +77,7 @@ const renderData = function (place, id, value) {
 //FORM SUBMIT AND VALIDATION
 secondForm.addEventListener("submit", (e) => {
   formValidation();
+
   if (checkIsFormValid() == true) {
     form.submit();
   } else {
@@ -88,7 +90,7 @@ const formValidation = function () {
   const laptopBrand = document.querySelector("#brand");
   const imageContainer = document.querySelector(".image_container");
 
-  //PHOTO
+  //PHOTO Validation
   if (image_input.value.trim() == "") {
     addError(image_input);
     imageContainer.style.border = "dashed 2px var(--red)";

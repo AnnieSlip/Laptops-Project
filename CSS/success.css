@@ -1,0 +1,35 @@
+body {
+  background-color: #222;
+}
+
+.container {
+  display: flex;
+  margin: auto;
+  width: 550px;
+  justify-content: center;
+  background-color: var(--white);
+  background-color: white;
+  border-radius: 5px;
+  padding: 3%;
+  flex-wrap: wrap;
+  height: 470px;
+  margin-top: 200px;
+}
+
+a {
+  display: block;
+
+  text-decoration: none;
+  margin-left: 80px;
+}
+
+#description {
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+button {
+  width: 90%;
+  margin-left: 12px;
+}

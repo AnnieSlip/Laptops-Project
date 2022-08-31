@@ -90,18 +90,18 @@ const validateForm = function () {
   const position = document.getElementById("position");
 
   //Firstname
-  if (firstName.value.trim() == "") {
-    setError(firstName, "ველი არ უნდა იყოს ცარიელი");
-  } else if (firstName.value.trim().length < 3) {
+  if (firstName.value.trim().length < 3) {
     setError(firstName, "მინიმუმ 2 სიმბოლო");
+  } else if (!geoLetters(firstName.value)) {
+    setError(firstName, "გამოიყენეთ ქართული ასოები");
   } else {
     setSucces(firstName, "მინიმუმ 2 სიმბოლო, ქართული ასოები");
   }
   //Lastname
-  if (lastName.value.trim() == "") {
-    setError(lastName, "ველი არ უნდა იყოს ცარიელი");
-  } else if (lastName.value.trim().length < 3) {
+  if (lastName.value.trim().length < 3) {
     setError(lastName, "მინიმუმ 2 სიმბოლო");
+  } else if (!geoLetters(lastName.value)) {
+    setError(lastName, "გამოიყენეთ ქართული ასოები");
   } else {
     setSucces(lastName, "მინიმუმ 2 სიმბოლო, ქართული ასოები");
   }
@@ -172,3 +172,8 @@ const isEmailValid = function (email) {
 function isPhoneValid(phone) {
   return true;
 }
+
+const geoLetters = function (text) {
+  const reg = /^[ა-ჰ]+$/;
+  return reg.test(text);
+};
