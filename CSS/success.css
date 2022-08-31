@@ -33,3 +33,9 @@ button {
   width: 90%;
   margin-left: 12px;
 }
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}

@@ -124,3 +124,41 @@ select {
   border: 1px solid black;
   margin-left: 400px;
 }
+
+/*ON MOBILE*/
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding: 0;
+  }
+
+  .form-container,
+  .first-container {
+    width: 100%;
+    padding: 0;
+  }
+  .form-box {
+    flex-direction: column;
+    width: 100%;
+  }
+  .elem {
+    width: 100%;
+    padding: 2%;
+    margin-left: 70px;
+  }
+  #logo {
+    display: none;
+  }
+
+  header {
+    display: block;
+  }
+  .image_container {
+    margin: 0;
+  }
+  .type {
+    margin-right: 174px;
+  }
+}
