@@ -2,6 +2,22 @@
 
 const url = "https://pcfy.redberryinternship.ge/api/laptop/create";
 
+let data = new FormData();
+data.append("name", "ani");
+data.append("surname", "ssdsad");
+data.append("team_id", 1);
+
+fetch(url, {
+  method: "POST",
+  headers: {
+    accept: "application/json",
+    "Content-Type": "multipart/form-data",
+  },
+  body: data,
+}).then(function (res) {
+  console.log(res);
+});
+
 /*
 fetch(url, {
   method: "POST",
@@ -18,7 +34,7 @@ fetch(url, {
     email: "gela.gelashvili@redberry.ge",
     token: "jnvc",
     laptop_name: "HP",
-    laptop_image: "hhh",
+    laptop_image: "1111 0000 1111 0000",
     laptop_brand_id: 3,
     laptop_cpu: "sds",
     laptop_cpu_cores: 8,
