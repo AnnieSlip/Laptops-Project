@@ -29,7 +29,6 @@
         id="second-container"
         name="myform"
         action="/pages/success.html"
-        method="GET"
       >
         <div class="first-container">
           <!-------------ADD PHOTO--------------------------->
@@ -185,7 +184,7 @@
                 <input
                   type="radio"
                   name="mdgomareoba"
-                  value="ახალი"
+                  value="new"
                   class="radio-input"
                   id="axali"
                 />
@@ -197,7 +196,7 @@
                 <input
                   type="radio"
                   name="mdgomareoba"
-                  value="მეორადი"
+                  value="used"
                   class="radio-input"
                   id="meoradi"
                 />
@@ -209,7 +208,9 @@
 
           <div class="form-box">
             <a href="/pages/tanamshromlis-info.html">უკან</a>
-            <button type="submit" class="damaxsovreba">დამახსოვრება</button>
+            <button type="submit" id="post-data" class="damaxsovreba">
+              დამახსოვრება
+            </button>
           </div>
         </div>
       </form>

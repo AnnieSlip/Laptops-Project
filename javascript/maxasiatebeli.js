@@ -1,5 +1,6 @@
 "use strict";
 const secondForm = document.getElementById("second-container");
+const postDataButton = document.getElementById("post-data");
 //INPUTS
 const image_input = document.querySelector("#image_input");
 const laptopName = document.querySelector("#laptopname");
@@ -10,10 +11,14 @@ const date = document.querySelector("#date");
 const price = document.querySelector("#price");
 const radio = document.querySelector(".radio");
 const imageContainer = document.querySelector(".image_container");
+const laptopBrandId = document.getElementById("brand");
 const url = "https://pcfy.redberryinternship.ge/api/laptop/create";
+const token = "91b5e9d8ab73bebb60f1a69e091da4f5";
+let image = "data:image/png;base64,iVBORw0KGgoAAAANSUhE";
 //const mdgomareoba = document.querySelector("");
 //const mexsierebisTipi = document.querySelector("");
 ////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 let uploaded_image = "";
 const realFileBtn = document.getElementById("image_input");
 const custumBtn = document.getElementById("custom-button");
@@ -22,9 +27,12 @@ const laptopCpuContainer = document.querySelector(".cpu-container");
 let x = false;
 //Recieve data from previous page
 const params = new URLSearchParams(window.location.search);
+let firstFormData = [];
 params.forEach((value, key) => {
-  console.log(value, key);
+  firstFormData.push(value);
 });
+const [firstName, lastName, teamID, position, email, phone] = firstFormData;
+
 //File upload and display
 image_input.addEventListener("change", function () {
   const reader = new FileReader();
@@ -60,8 +68,11 @@ const getCPU = async function () {
     const res = await fetch("https://pcfy.redberryinternship.ge/api/cpus");
     const data = await res.json();
     const laptopCPU = data.data.reverse();
+    console.log(laptopCPU);
     laptopCPU.map((cpu) => {
-      renderData(laptopCpuContainer, cpu.id, cpu.name);
+      const cpuValue = cpu.name.replace(/ /g, "_");
+      console.log(cpuValue);
+      renderData(laptopCpuContainer, cpuValue, cpu.name);
     });
   } catch (err) {
     console.log(err);
@@ -75,29 +86,62 @@ const renderData = function (place, id, value) {
     `;
   place.insertAdjacentHTML("afterend", data);
 };
-//FORM SUBMIT AND VALIDATION
-secondForm.addEventListener("submit", (e) => {
-  formValidation();
 
-  if (checkIsFormValid() == true) {
-    let data = new FormData();
-    data.append("name", "ani");
-    data.append("surname", "ssdsad");
-    data.append("team_id", 1);
+//POST REQUEST
+const postData = async function () {
+  const laptopBrandId = document.querySelector("#brand");
+  const laptopCpu = document.querySelector("#cpu").value.replace(/_/g, " ");
+  const mdgomareoba = document.querySelector(
+    'input[name="mdgomareoba"]:checked'
+  );
 
-    fetch(url, {
+  const mexsierebaType = document.querySelector(
+    'input[name="mexsiereba"]:checked'
+  );
+  let testData = {
+    name: firstName,
+    surname: lastName,
+    team_id: Number(teamID),
+    position_id: Number(position),
+    phone_number: "+995593157777",
+    email: email,
+    laptop_name: laptopName.value,
+    token,
+    laptop_image: image,
+    laptop_brand_id: Number(laptopBrandId.value),
+    laptop_cpu: laptopCpu,
+    laptop_cpu_cores: Number(cpuBirtvi.value),
+    laptop_cpu_threads: Number(nakadi.value),
+    laptop_ram: Number(laptopRAM.value),
+    laptop_hard_drive_type: mexsierebaType.value,
+    laptop_state: mdgomareoba.value,
+    laptop_price: Number(price.value),
+  };
+  console.log(testData);
+  try {
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         accept: "application/json",
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
-      body: data,
-    }).then(function (res) {
-      console.log(res);
+      body: JSON.stringify(testData),
     });
-    form.submit();
-  } else {
-    e.preventDefault();
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+//Form submit
+secondForm.addEventListener("submit", (e) => {
+  formValidation();
+  e.preventDefault();
+
+  if (checkIsFormValid() == true) {
+    postData();
+    window.localStorage.clear();
+    postDataButton.click();
   }
 });
 
@@ -105,7 +149,6 @@ const formValidation = function () {
   const laptopCPU = document.querySelector("#cpu");
   const laptopBrand = document.querySelector("#brand");
   const imageContainer = document.querySelector(".image_container");
-
   //PHOTO Validation
   if (image_input.value.trim() == "") {
     addError(image_input);
@@ -209,3 +252,24 @@ function removeError(element) {
   const parent = element.parentElement;
   parent.classList.remove("error");
 }
+//Upload things in localstorage
+const elems = [laptopName, cpuBirtvi, cpu, laptopRAM, date, price, nakadi];
+
+const setItemInLocalstorage = function () {
+  localStorage.setItem("laptopName", laptopName.value);
+  localStorage.setItem("cpuBirtvi", cpuBirtvi.value);
+  localStorage.setItem("cpu", cpu.value);
+  localStorage.setItem("laptopRam", laptopRAM.value);
+  localStorage.setItem("date", date.value);
+  localStorage.setItem("price", price.value);
+  localStorage.setItem("cpuNakadi", nakadi.value);
+};
+elems.map((elem) => elem.addEventListener("keyup", setItemInLocalstorage));
+
+laptopName.value = localStorage.getItem("laptopName");
+cpuBirtvi.value = localStorage.getItem("cpuBirtvi");
+cpu.value = localStorage.getItem("cpu");
+laptopRAM.value = localStorage.getItem("laptopRam");
+date.value = localStorage.getItem("date");
+price.value = localStorage.getItem("price");
+nakadi.value = localStorage.getItem("cpuNakadi");

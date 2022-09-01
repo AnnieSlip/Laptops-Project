@@ -177,3 +177,18 @@ const geoLetters = function (text) {
   const reg = /^[ა-ჰ]+$/;
   return reg.test(text);
 };
+//Upload things in local storage
+const items = [firstName, lastName, email, phone];
+const setInLocalstorage = function () {
+  localStorage.setItem("firstName", firstName.value);
+  localStorage.setItem("lastName", lastName.value);
+  localStorage.setItem("email", email.value);
+  localStorage.setItem("phone", phone.value);
+};
+
+items.map((item) => item.addEventListener("keyup", setInLocalstorage));
+
+firstName.value = localStorage.getItem("firstName");
+lastName.value = localStorage.getItem("lastName");
+email.value = localStorage.getItem("email");
+phone.value = localStorage.getItem("phone");
