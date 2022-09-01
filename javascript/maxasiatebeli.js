@@ -10,6 +10,7 @@ const date = document.querySelector("#date");
 const price = document.querySelector("#price");
 const radio = document.querySelector(".radio");
 const imageContainer = document.querySelector(".image_container");
+const url = "https://pcfy.redberryinternship.ge/api/laptop/create";
 //const mdgomareoba = document.querySelector("");
 //const mexsierebisTipi = document.querySelector("");
 ////////////////////////////////////////////////////
@@ -79,6 +80,21 @@ secondForm.addEventListener("submit", (e) => {
   formValidation();
 
   if (checkIsFormValid() == true) {
+    let data = new FormData();
+    data.append("name", "ani");
+    data.append("surname", "ssdsad");
+    data.append("team_id", 1);
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "Content-Type": "multipart/form-data",
+      },
+      body: data,
+    }).then(function (res) {
+      console.log(res);
+    });
     form.submit();
   } else {
     e.preventDefault();

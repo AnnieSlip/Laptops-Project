@@ -1,23 +1,5 @@
 "use strict";
 
-const url = "https://pcfy.redberryinternship.ge/api/laptop/create";
-
-let data = new FormData();
-data.append("name", "ani");
-data.append("surname", "ssdsad");
-data.append("team_id", 1);
-
-fetch(url, {
-  method: "POST",
-  headers: {
-    accept: "application/json",
-    "Content-Type": "multipart/form-data",
-  },
-  body: data,
-}).then(function (res) {
-  console.log(res);
-});
-
 /*
 fetch(url, {
   method: "POST",
