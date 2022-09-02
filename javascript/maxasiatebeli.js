@@ -13,7 +13,7 @@ const radio = document.querySelector(".radio");
 const imageContainer = document.querySelector(".image_container");
 const laptopBrandId = document.getElementById("brand");
 const url = "https://pcfy.redberryinternship.ge/api/laptop/create";
-const token = "91b5e9d8ab73bebb60f1a69e091da4f5";
+const token = "38ffd54f84dd44d0facd708c1b523d3d";
 let image = "data:image/png;base64,iVBORw0KGgoAAAANSUhE";
 //const mdgomareoba = document.querySelector("");
 //const mexsierebisTipi = document.querySelector("");
@@ -24,7 +24,6 @@ const realFileBtn = document.getElementById("image_input");
 const custumBtn = document.getElementById("custom-button");
 const laptopBrandContainer = document.querySelector(".brand-container");
 const laptopCpuContainer = document.querySelector(".cpu-container");
-let x = false;
 //Recieve data from previous page
 const params = new URLSearchParams(window.location.search);
 let firstFormData = [];
@@ -94,7 +93,7 @@ const postData = async function () {
   const mdgomareoba = document.querySelector(
     'input[name="mdgomareoba"]:checked'
   );
-
+  const image = document.getElementById("image_input");
   const mexsierebaType = document.querySelector(
     'input[name="mexsiereba"]:checked'
   );
@@ -107,7 +106,7 @@ const postData = async function () {
     email: email,
     laptop_name: laptopName.value,
     token,
-    laptop_image: image,
+    laptop_image: image.files[0],
     laptop_brand_id: Number(laptopBrandId.value),
     laptop_cpu: laptopCpu,
     laptop_cpu_cores: Number(cpuBirtvi.value),
