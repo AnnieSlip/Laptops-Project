@@ -1,6 +1,7 @@
 "use strict";
 const secondForm = document.getElementById("second-container");
 const postDataButton = document.getElementById("post-data");
+const againBTN = document.getElementById("again-btn");
 //INPUTS
 const image_input = document.querySelector("#image_input");
 const laptopName = document.querySelector("#laptopname");
@@ -14,7 +15,8 @@ const imageContainer = document.querySelector(".image_container");
 const laptopBrandId = document.getElementById("brand");
 const url = "https://pcfy.redberryinternship.ge/api/laptop/create";
 const token = "38ffd54f84dd44d0facd708c1b523d3d";
-let image = "data:image/png;base64,iVBORw0KGgoAAAANSUhE";
+let formData = new FormData();
+
 //const mdgomareoba = document.querySelector("");
 //const mexsierebisTipi = document.querySelector("");
 ////////////////////////////////////////////////////
@@ -31,18 +33,41 @@ params.forEach((value, key) => {
   firstFormData.push(value);
 });
 const [firstName, lastName, teamID, position, email, phone] = firstFormData;
+let x;
 
 //File upload and display
+
+image_input.addEventListener("change", function (e) {
+  e.preventDefault();
+  const files = e.target.files;
+  formData.append("laptop_image", files[0]);
+  const reader = new FileReader();
+  reader.addEventListener("load", () => {
+    uploaded_image = reader.result;
+    imageContainer.style.backgroundImage = `url(${uploaded_image})`;
+    imageContainer.style.border = "none";
+    document.querySelector(".photo-description").style.display = "none";
+    custumBtn.classList.add("hidden");
+    document.querySelector(".again").style.opacity = 1;
+  });
+  reader.readAsDataURL(this.files[0]);
+});
+
+/*
 image_input.addEventListener("change", function () {
   const reader = new FileReader();
   reader.addEventListener("load", () => {
     uploaded_image = reader.result;
-    document.querySelector(
-      "#display_image"
-    ).style.backgroundImage = `url(${uploaded_image})`;
+    imageContainer.style.backgroundImage = `url(${uploaded_image})`;
+    imageContainer.style.border = "none";
+    document.querySelector(".photo-description").style.display = "none";
+    custumBtn.classList.add("hidden");
+    document.querySelector(".again").style.opacity = 1;
   });
   reader.readAsDataURL(this.files[0]);
 });
+*/
+
 //Custom radio buttons click
 custumBtn.addEventListener("click", function () {
   realFileBtn.click();
@@ -97,6 +122,8 @@ const postData = async function () {
   const mexsierebaType = document.querySelector(
     'input[name="mexsiereba"]:checked'
   );
+
+  /*
   let testData = {
     name: firstName,
     surname: lastName,
@@ -106,7 +133,7 @@ const postData = async function () {
     email: email,
     laptop_name: laptopName.value,
     token,
-    laptop_image: image.files[0],
+    laptop_image: x,
     laptop_brand_id: Number(laptopBrandId.value),
     laptop_cpu: laptopCpu,
     laptop_cpu_cores: Number(cpuBirtvi.value),
@@ -116,15 +143,35 @@ const postData = async function () {
     laptop_state: mdgomareoba.value,
     laptop_price: Number(price.value),
   };
-  console.log(testData);
+  */
+
+  formData.append("name", firstName);
+  formData.append("surname", lastName);
+  formData.append("team_id", Number(teamID));
+  formData.append("position_id", Number(position));
+  formData.append("phone_number", "+995599555555");
+  formData.append("email", email);
+  formData.append("token", token);
+  formData.append("laptop_brand_id", Number(laptopBrandId.value));
+  formData.append("laptop_cpu", laptopCpu);
+  formData.append("laptop_cpu_cores", Number(cpuBirtvi.value));
+  formData.append("laptop_cpu_threads", Number(nakadi.value));
+  formData.append("laptop_ram", Number(laptopRAM.value));
+  formData.append("laptop_hard_drive_type", mexsierebaType.value);
+  formData.append("laptop_state", mdgomareoba.value);
+  formData.append("laptop_price", Number(price.value));
+  formData.append("laptop_name", laptopName.value);
+
   try {
     const res = await fetch(url, {
       method: "POST",
       headers: {
         accept: "application/json",
-        "Content-Type": "application/json",
+
+        //"Content-Type": "application/json",
       },
-      body: JSON.stringify(testData),
+      body: formData,
+      //body: JSON.stringify(testData),
     });
     const data = await res.json();
     console.log(data);
@@ -132,13 +179,34 @@ const postData = async function () {
     console.log(err);
   }
 };
+
+/*
+const send = async function (data) {
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+      },
+      body: data,
+    });
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+*/
 //Form submit
 secondForm.addEventListener("submit", (e) => {
   formValidation();
   e.preventDefault();
+  let formData = new FormData(secondForm);
+  console.log(formData);
 
   if (checkIsFormValid() == true) {
     postData();
+
     window.localStorage.clear();
     postDataButton.click();
   }
