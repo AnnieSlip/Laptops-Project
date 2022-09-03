@@ -6,7 +6,7 @@ const form = document.querySelector(".form-container");
 const firstName = document.getElementById("firstname");
 const lastName = document.getElementById("lastname");
 const email = document.getElementById("email");
-const phone = document.getElementById("phone");
+//const phone = document.getElementById("phone");
 
 //Get Teams data from api
 const getTeam = async function () {
@@ -88,6 +88,8 @@ function isFormValid() {
 const validateForm = function () {
   const team = document.getElementById("team");
   const position = document.getElementById("position");
+  const phone = document.getElementById("phone");
+  console.log(phone.value);
 
   //Firstname
   if (firstName.value.trim().length < 3) {
@@ -118,7 +120,7 @@ const validateForm = function () {
   //Phone
   if ((phone.value = "")) {
     setError(phone, "ველი არ უნდა იყოს ცარიელი");
-  } else if (isPhoneValid(phone.value)) {
+  } else if (!isPhoneValid(phone.value)) {
     setSucces(phone, "უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს");
   } else {
     setError(phone, "უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს");
@@ -170,7 +172,9 @@ const isEmailValid = function (email) {
 };
 
 function isPhoneValid(phone) {
-  return true;
+  const reg =
+    /\+\S*9\S*9\S*5\S*5\S*[976514]\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*\d\S*/;
+  return reg.test(phone);
 }
 
 const geoLetters = function (text) {

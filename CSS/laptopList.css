@@ -1,0 +1,56 @@
+#laptopList_header {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 150%;
+  padding: 3%;
+  position: relative;
+}
+
+#laptopList_back_btn {
+  position: absolute;
+  left: 120px;
+  top: 20px;
+}
+
+#laptopList_container {
+  width: 80%;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3%;
+  gap: 3em;
+}
+
+#laptopList_container > * {
+  flex: 0 1 45%;
+}
+
+.laptop-box {
+  border: 1px solid var(--blue);
+  background-color: var(--light-blue);
+  border-radius: 4%;
+  padding: 3%;
+}
+
+.laptop-img {
+  width: 210px;
+  height: 140px;
+}
+
+.laptop-box {
+  display: flex;
+  gap: 3em;
+  font-weight: 600;
+}
+
+@media (max-width: 500px) {
+  #laptopList_container {
+    padding: 0;
+  }
+
+  #laptopList_back_btn {
+    left: 3px;
+  }
+}
