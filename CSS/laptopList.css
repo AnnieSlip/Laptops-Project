@@ -1,18 +1,3 @@
-#laptopList_header {
-  display: flex;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 150%;
-  padding: 3%;
-  position: relative;
-}
-
-#laptopList_back_btn {
-  position: absolute;
-  left: 120px;
-  top: 20px;
-}
-
 #laptopList_container {
   width: 80%;
   display: flex;
