@@ -120,6 +120,14 @@ button:hover {
   display: none;
 }
 
+input,
+input:active {
+  outline: none;
+}
+input:focus {
+  background-color: var(--light-blue);
+}
+
 /* FIRST PAGE CSS */
 .first-page-btn {
   width: 450px;
