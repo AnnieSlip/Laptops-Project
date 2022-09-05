@@ -25,6 +25,7 @@ const realFileBtn = document.getElementById("image_input");
 const custumBtn = document.getElementById("custom-button");
 const laptopBrandContainer = document.querySelector(".brand-container");
 const laptopCpuContainer = document.querySelector(".cpu-container");
+const secondNavigator = document.getElementById("second-navigator");
 //Recieve data from previous page
 const params = new URLSearchParams(window.location.search);
 let firstFormData = [];
@@ -282,3 +283,12 @@ laptopRAM.value = localStorage.getItem("laptopRam");
 date.value = localStorage.getItem("date");
 price.value = localStorage.getItem("price");
 nakadi.value = localStorage.getItem("cpuNakadi");
+
+secondNavigator.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location = "/pages/tanamshromlis-info.html";
+});
+
+againBTN.addEventListener("click", function () {
+  image_input.click();
+});

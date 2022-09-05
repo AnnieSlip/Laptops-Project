@@ -12,11 +12,25 @@
   --green: #23ff39;
 }
 
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("http://fonts.cdnfonts.com/css/helvetica-neue-9");
+}
+.uppercase {
+  font-family: HelveticaNeue;
+  font-variant-caps: all-small-caps;
+}
+
+.lowercase {
+  font-family: HelveticaNeue;
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 100vh;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -129,4 +143,16 @@ button:hover {
   position: absolute;
   left: 120px;
   top: 20px;
+}
+
+.navigator {
+  background: none;
+  color: var(--black);
+  padding: 0;
+  margin: 0;
+  font-size: 17px;
+}
+
+.navigator:hover {
+  background: none;
 }

@@ -6,3 +6,8 @@ damateba.addEventListener("click", function (e) {
   e.preventDefault();
   window.location = "/pages/tanamshromlis-info.html";
 });
+
+sia.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location = "/pages/laptopList.html";
+});

@@ -59,17 +59,9 @@ label {
   width: 99%;
 }
 
-i {
-  color: var(--green);
-  position: absolute;
-  top: 40px;
-  right: 20px;
-  visibility: hidden;
-}
-
 .next-btn {
   width: 140px;
-  margin-left: 455px;
+  margin-left: 617px;
 }
 
 a {
@@ -84,10 +76,6 @@ header {
 
 .select:hover:after {
   background: var(--light-blue);
-}
-
-.success i {
-  visibility: visible;
 }
 
 .success input {

@@ -6,6 +6,7 @@ const form = document.querySelector(".form-container");
 const firstName = document.getElementById("firstname");
 const lastName = document.getElementById("lastname");
 const email = document.getElementById("email");
+const navigator = document.getElementById("navigator-one");
 //const phone = document.getElementById("phone");
 
 //Get Teams data from api
@@ -34,7 +35,7 @@ const renderData = function (place, id, value) {
   place.insertAdjacentHTML("afterend", teams);
 };
 
-//GET SELECT VALUE FROM TEAM AND RENDER POSITIONS DEPEND IT
+//GET SELECT VALUE FROM TEAM AND RENDER POSITIONS DEPEND ON IT
 function getSelectValue() {
   let selectValue = document.getElementById("team").value;
 
@@ -196,3 +197,9 @@ firstName.value = localStorage.getItem("firstName");
 lastName.value = localStorage.getItem("lastName");
 email.value = localStorage.getItem("email");
 phone.value = localStorage.getItem("phone");
+
+navigator.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (!isFormValid()) return;
+  window.location = "/pages/maxasiatebeli.html";
+});

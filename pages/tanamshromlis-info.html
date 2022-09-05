@@ -24,7 +24,7 @@
           <p>თანამშრომლის ინფო</p>
           <hr />
         </div class="laptop">
-        <p class="laptop">ლეპტოპის მახასიათებლები</p>
+        <button class="laptop navigator" id="navigator-one">ლეპტოპის მახასიათებლები</button>
       </header>
 
       <form class="form-container" id="tanamshromeli-form" action="/pages/maxasiatebeli.html" method="GET">
@@ -35,7 +35,6 @@
               <label for="firstname" >სახელი</label>
               <input type="text" name="firstname" 
               placeholder="გრიშა" id="firstname" />
-              <i id="first-i" class="fa-solid fa-circle-check"></i>
               <p>მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
               
             </div>
@@ -46,7 +45,6 @@
               <input type="text" name="lastname" 
               placeholder="ბაგრატიონი"
               id="lastname" />
-              <i class="fa-solid fa-circle-check"></i>
               <p>მინიმუმ 2 სიმბოლო, ქართული ასოები</p>
             </div>
           </div>
@@ -74,7 +72,6 @@
           <div class="form-elem">
             <label for="email">მეილი</label>
             <input type="email" name="email" id="email" />
-            <i class="fa-solid fa-circle-check"></i>
             <p>უნდა მთავრდებოდეს @redberry.ge</p>
           </div>
 
@@ -82,13 +79,12 @@
           <div class="form-elem">
             <label for="phone">ტელეფონის ნომერი</label>
             <input type="tel" name="phone" id="phone" />
-            <i class="fa-solid fa-circle-check"></i>
             <p>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</p>
           </div>
         </div>
 
         <!--BUTTON-->
-        <button class="next-btn" type="submit" class="button">შემდეგი</button>
+        <button class="next-btn" type="submit" class="button" id="next">შემდეგი</button>
       </form>
 
       <div>
