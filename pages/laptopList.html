@@ -17,10 +17,61 @@
         href="/pages/maxasiatebeli.html"
         ><img src="/Photos/back-btn.png"
       /></a>
-      <p>ჩანაწერების სია</p>
+      <p id="list_description">ჩანაწერების სია</p>
     </header>
-
     <div id="laptopList_container"></div>
+    <div id="single_laptop_container" class="hidden">
+      <div class="laptopInfo_container">
+        <div>
+          <img
+            id="laptop__photo"
+            src="/Photos/Computer.png"
+            alt="laptop-photo"
+          />
+        </div>
+
+        <div class="user_info_keys">
+          <p>სახელი:</p>
+          <p>თიმი:</p>
+          <p>პოზიცია:</p>
+          <p>მეილი:</p>
+          <p>ტელ.ნომერი:</p>
+        </div>
+        <div class="user_info_values" id="userData"></div>
+      </div>
+      <hr />
+      <div class="laptopInfo_container second">
+        <div class="user_info_keys">
+          <p>ლეპტოპის სახელი:</p>
+          <p>ლეპტოპის ბრენდი:</p>
+          <p>RAM:</p>
+          <p>მეხსიერების ტიპი:</p>
+        </div>
+        <div class="user_info_values" id="laptopData"></div>
+
+        <div class="user_info_keys">
+          <p>CPU:</p>
+          <p>CPU-ს ბირთვი:</p>
+          <p>CPU-ს ნაკადი:</p>
+        </div>
+        <div class="user_info_values" id="cpu_values"></div>
+      </div>
+
+      <hr />
+
+      <div class="laptopInfo_container second">
+        <div class="user_info_keys">
+          <p>ლეპტოპის მდგომარეობა</p>
+          <p>ლეპტოპის ფასი</p>
+        </div>
+        <div class="user_info_values" id="laptop_state"></div>
+
+        <div class="user_info_keys">
+          <p>შეძენის რიცხვი</p>
+        </div>
+        <div class="user_info_values" id="purchase-date"></div>
+      </div>
+    </div>
 
     <script src="/javascript/laptopList.js"></script>
   </body>

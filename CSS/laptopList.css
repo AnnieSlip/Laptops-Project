@@ -11,6 +11,17 @@
 #laptopList_container > * {
   flex: 0 1 45%;
 }
+.laptopList-btn {
+  color: blue;
+  background: none;
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.laptopList-btn:hover {
+  background: none;
+}
 
 .laptop-box {
   border: 1px solid var(--blue);
@@ -37,5 +48,45 @@
 
   #laptopList_back_btn {
     left: 3px;
+  }
+}
+
+.laptopInfo_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  margin: 30px auto 50px auto;
+  font-size: 22px;
+}
+
+#laptop__photo {
+  width: 550px;
+  height: 320px;
+}
+
+.user_info_keys {
+  font-weight: 600;
+}
+
+.user_info_values {
+  color: gray;
+}
+hr {
+  width: 70%;
+}
+
+.second {
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#laptopInfo_description {
+  font-size: 34px;
+}
+
+@media (max-width: 600px) {
+  .laptopInfo_container {
+    flex-direction: column;
   }
 }
